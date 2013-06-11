@@ -10,4 +10,11 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
+
+if(file_exists($config))
+{
+	echo('No config file found! Please run the <a href="install/">Installer</a>!');
+	exit(1);
+}
+
 Yii::createWebApplication($config)->run();
