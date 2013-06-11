@@ -17,4 +17,10 @@ if(!file_exists($config))
 	exit(1);
 }
 
+if(file_exists($config) && file_exists(dirname(__FILE__).'/install/'))
+{
+        echo('Please remove the install directory!');
+        exit(1);
+}
+
 Yii::createWebApplication($config)->run();
